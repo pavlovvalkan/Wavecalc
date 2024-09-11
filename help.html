@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.3.2 (Windows)"/>
+	<meta name="created" content="2024-09-10T10:25:20.578000000"/>
+	<meta name="changed" content="2024-09-11T19:37:27.311000000"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		td p { line-height: 115%; orphans: 0; widows: 0; margin-bottom: 0.25cm; background: transparent }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+	</style>
+</head>
+<body lang="bg-BG" dir="ltr"><p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">If
+you've ever studied the theory behind capturing sound or other waves,
+you've likely encountered terms like near/far field, antenna size,
+frequency, wavelength, and sampling rate. Each of these concepts is
+interconnected and can be expressed as functions of the others. For
+instance, wavelength is inversely proportional to frequency, and the
+sampling rate is proportional to frequency. Additionally, the
+boundary between the near and far field depends on both the
+wavelength and the size of the antenna.</span></font></font></p>
+<p><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">For
+example, I&rsquo;m currently working on designing a device that
+samples sound waves. To ensure accuracy, I need to determine whether
+my device can sample and process data at least twice the speed of the
+wave frequency, or whether I should focus on waves for which my
+device&rsquo;s speed is sufficient. Therefore, I&rsquo;m aiming to
+sample waves with longer wavelengths (&lambda;) and lower
+frequencies. However, I must also restrict the device&rsquo;s
+operation to the near field, which influences the required size of
+the antenna (D).</span></font></font></p>
+<p><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">In
+short, I need a tool that can quickly calculate the relationships
+between these variables, making it easier to identify the optimal
+parameters for my project. </span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">The
+main formula I use is this: <span lang="en-US"><i>R</i></span><sub><span lang="en-US"><i>farfield</i></span></sub><span lang="en-US"><i>=(2D</i></span><sup><span lang="en-US"><i>2</i></span></sup><span lang="en-US"><i>)/</i></span><i>&lambda;</i>
+.</span></font></font></p>
+<p lang="en-US" align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">Where:</span></font></font></p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="en-US"><b>R</b></span><sub><span lang="en-US"><b>farfield</b></span></sub><sub>
+</sub><span lang="en-US">is the boundary between the near and far
+field. </span></span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="en-US"><b>D</b></span><span lang="en-US">-
+is the largest length of the antenna (for array antennas, it is the
+greatest distance between two sensors).</span></span></font></font></p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="bg-BG"><b>&lambda;</b></span><span lang="bg-BG">-
+frequency of the examined signal. </span></span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">The
+sampling rate is simply double the sound frequency, so I don't
+include it due to its easy calculation. </span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">The
+calculator offers two primary functions. First, by inputting values
+for D (antenna size) and &lambda; (wavelength), you can calculate R
+(the near/far field boundary). The second option allows you to fix
+one of the three parameters, assign a variable value to the second,
+and calculate the third. This makes it easy to explore the
+relationships between these variables and identify appropriate
+parameters for your design.</span></font></font></p>
+<p><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">For
+example, if you set the frequency slider to 100 Hz, this value will
+automatically appear in the &quot;Frequency&quot; box. The frequency
+range extends up to 10,000 Hz, so you can fine-tune your selection by
+entering a specific frequency directly into the box and pressing
+Enter (real numbers are accepted).</span></font></font></p>
+<p><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">After
+adjusting or inputting a frequency, the &quot;Wavelength (&lambda;)&quot;
+field will automatically update&mdash;this works in both directions,
+so you can directly select either frequency or wavelength. Each time
+you press Enter or adjust the sliders, the near/far field boundary
+(R) is recalculated. This feature allows for quick and precise
+calculations of R based on your desired frequency and wavelength.</span></font></font></p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">In
+the second mode, you have several menus where you can set the
+following parameters: </span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="en-US"><b>Fix</b></span>
+&ndash; <span lang="bg-BG">the drop-down menu Fixes one of the three
+parameters. Its purpose is to lock the current value (displayed in
+the corresponding box). </span></span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="en-US"><b>Hold</b></span>
+&ndash; <span lang="bg-BG">allows you to choose a parameter whose
+mean value will be taken from the corresponding box, but will be
+calculated with a given deviation in percentages. For example, a
+wavelength of 3m with a 10% deviation means the third parameter will
+be calculated n times, starting with the minimum and ending with the
+maximum value. </span></span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="bg-BG"><b>%</b></span>
+<span lang="bg-BG">- controls the percentage deviation. </span></span></font></font>
+</p>
+<p align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="en-US"><b>Steps</b></span>
+&ndash; <span lang="bg-BG">sets the number of steps for the
+calculation between the minimum and maximum value of the selected
+variable. </span></span></font></font>
+</p>
+<p lang="en-US" align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="bg-BG">The
+&ldquo;</span><span lang="bg-BG"><b>Calculate</b></span>&rdquo;
+<span lang="bg-BG">button performs the requested calculations and
+fills in the table below. </span></span></font></font>
+</p>
+<p lang="en-US" align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent"><span lang="bg-BG">Example
+calculation: Given R=3m and Frequency=1000 Hz, we could explore how
+the size of the antenna (</span><span lang="bg-BG"><b>D</b></span><span lang="bg-BG">)
+changes. I will fix R and give a 50% deviation to the frequency,
+leaving the default number of steps at 10. Note that when entering
+the frequency, R will automatically update, so it&rsquo;s important
+to input R last. From the completed table, it becomes clear that the
+wavelength is directly proportional to the size of the antenna. Let&rsquo;s
+assume that 0.5m is an appropriate size for our antenna, in which
+case we understand that we need to study a sound with a wavelength of
+0.171500. Quickly copying this value and entering it into Wavelength
+(</span><span lang="bg-BG"><b>&lambda;</b></span><span lang="bg-BG">)
+shows that we will need to receive a signal with a frequency of 2000
+Hz or achieve double that for the sampling frequency. Personally,
+this worries me, and I would play around with the antenna size and R
+to achieve lower frequencies, which my device would process faster
+with fewer samples. </span></span></font></font>
+</p>
+<p align="left"><br/>
+<br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0" style="page-break-inside: avoid">
+	<col width="38*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="22*"/>
+
+	<col width="17*"/>
+
+	<col width="27*"/>
+
+	<tr valign="top">
+		<td width="15%" height="29" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p lang="en-US" align="left">
+			<font color="#000000"><b><span style="background: transparent">Border
+			(R)</span></b></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="9%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="7%" style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+		<td width="10%" style="border: 1px double #808080; padding: 0.1cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">3.000000</span></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="15%" height="30" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><b><span style="background: transparent"><span lang="en-US">Wavelength
+			</span>(&lambda;)</span></b></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.171500</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.209611</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.247722</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.285833</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.323944</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.362056</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.400167</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.438278</span></font></p>
+		</td>
+		<td width="7%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.476389</span></font></p>
+		</td>
+		<td width="10%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.514500</span></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="15%" height="29" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p lang="en-US" align="left">
+			<font color="#000000"><b><span style="background: transparent">Antenna
+			Size (D)</span></b></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.507198</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.560729</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.609576</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.654790</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.697077</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.736942</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.774758</span></font></p>
+		</td>
+		<td width="9%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.810812</span></font></p>
+		</td>
+		<td width="7%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.845330</span></font></p>
+		</td>
+		<td width="10%" style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p align="left">
+			<font color="#000000"><span style="background: transparent">0.878493</span></font></p>
+		</td>
+	</tr>
+</table>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p lang="en-US" align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><span style="background: transparent">I
+hope this calculator will be useful to you. The program is
+open-source, and is officially published at the following address:</span></font></font></p>
+<p align="left"><a href="https://github.com/pavlovvalkan/Wavecalc"><font color="#000000"><font size="4" style="font-size: 16pt"><span lang="en-US"><span style="background: transparent">https://github.com/pavlovvalkan/Wavecalc</span></span></font></font></a></p>
+<p lang="en-US" align="left"><font color="#000000"><font size="4" style="font-size: 16pt"><b><span style="background: transparent">Feedback,
+comments, and suggestions are always welcome at
+pavlovvalkan@gmail.com </span></b></font></font>
+</p>
+</body>
+</html>

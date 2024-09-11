@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/help"/>
+    <qresource prefix="/">
+        <file>help.html</file>
+        <file>about.html</file>
+    </qresource>
+    <qresource prefix="/about"/>
+</RCC>
