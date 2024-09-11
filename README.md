@@ -1,5 +1,5 @@
 # Wavecalc
-Calculator for key parameters of wave propagation and capture.
+Calculator for key parameters of wave propagation and capture. This program is created with Qt creator.
 If you've ever studied the theory behind capturing sound or other waves, you've likely encountered terms like near/far field, antenna size, frequency, wavelength, and sampling rate. Each of these concepts is interconnected and can be expressed as functions of the others. For instance, wavelength is inversely proportional to frequency, and the sampling rate is proportional to frequency. Additionally, the boundary between the near and far field depends on both the wavelength and the size of the antenna.
 For example, I’m currently working on designing a device that samples sound waves. To ensure accuracy, I need to determine whether my device can sample and process data at least twice the speed of the wave frequency, or whether I should focus on waves for which my device’s speed is sufficient. Therefore, I’m aiming to sample waves with longer wavelengths (λ) and lower frequencies. However, I must also restrict the device’s operation to the near field, which influences the required size of the antenna (D).
 In short, I need a tool that can quickly calculate the relationships between these variables, making it easier to identify the optimal parameters for my project. 
